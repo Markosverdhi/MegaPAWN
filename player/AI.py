@@ -252,44 +252,125 @@ class AI:
 
     def calculateb(self,gametiles):
         value=0
+        bQueenCount = 0
+        wQueenCount = 0
         for x in range(8):
             for y in range(8):
-                    if gametiles[y][x].pieceonTile.tostring()=='P':
-                        value=value-100
+                if gametiles[y][x].pieceonTile.tostring()=='Q':
+                    bQueenCount += 1
+                if gametiles[y][x].pieceonTile.tostring()=='q':
+                    wQueenCount += 1
 
-                    if gametiles[y][x].pieceonTile.tostring()=='N':
-                        value=value-350
+        for x in range(8):
+            for y in range(8):
+                    if bQueenCount > 0 and wQueenCount > 0 and bQueenCount == wQueenCount:
+                        if gametiles[y][x].pieceonTile.tostring()=='P':
+                            value=value-80
 
-                    if gametiles[y][x].pieceonTile.tostring()=='B':
-                        value=value-350
+                        if gametiles[y][x].pieceonTile.tostring()=='N':
+                            value=value-320
 
-                    if gametiles[y][x].pieceonTile.tostring()=='R':
-                        value=value-525
+                        if gametiles[y][x].pieceonTile.tostring()=='B':
+                            value=value-330
 
-                    if gametiles[y][x].pieceonTile.tostring()=='Q':
-                        value=value-1000
+                        if gametiles[y][x].pieceonTile.tostring()=='R':
+                            value=value-460
 
-                    if gametiles[y][x].pieceonTile.tostring()=='K':
-                        value=value-10000
+                        if gametiles[y][x].pieceonTile.tostring()=='Q':
+                            value=value-950
 
-                    if gametiles[y][x].pieceonTile.tostring()=='p':
-                        value=value+100
+                        if gametiles[y][x].pieceonTile.tostring()=='K':
+                            value=value-10000
 
-                    if gametiles[y][x].pieceonTile.tostring()=='n':
-                        value=value+350
+                        if gametiles[y][x].pieceonTile.tostring()=='p':
+                            value=value+80
 
-                    if gametiles[y][x].pieceonTile.tostring()=='b':
-                        value=value+350
+                        if gametiles[y][x].pieceonTile.tostring()=='n':
+                            value=value+320
 
-                    if gametiles[y][x].pieceonTile.tostring()=='r':
-                        value=value+525
+                        if gametiles[y][x].pieceonTile.tostring()=='b':
+                            value=value+330
 
-                    if gametiles[y][x].pieceonTile.tostring()=='q':
-                        value=value+1000
+                        if gametiles[y][x].pieceonTile.tostring()=='r':
+                            value=value+460
 
-                    if gametiles[y][x].pieceonTile.tostring()=='k':
-                        value=value+10000
+                        if gametiles[y][x].pieceonTile.tostring()=='q':
+                            value=value+950
 
+                        if gametiles[y][x].pieceonTile.tostring()=='k':
+                            value=value+10000
+                    if abs(bQueenCount - wQueenCount) > 0:
+                        if gametiles[y][x].pieceonTile.tostring()=='P':
+                            value=value-90
+
+                        if gametiles[y][x].pieceonTile.tostring()=='N':
+                            value=value-320
+
+                        if gametiles[y][x].pieceonTile.tostring()=='B':
+                            value=value-330
+
+                        if gametiles[y][x].pieceonTile.tostring()=='R':
+                            value=value-485
+
+                        if gametiles[y][x].pieceonTile.tostring()=='Q':
+                            value=value-940
+
+                        if gametiles[y][x].pieceonTile.tostring()=='K':
+                            value=value-10000
+
+                        if gametiles[y][x].pieceonTile.tostring()=='p':
+                            value=value+90
+
+                        if gametiles[y][x].pieceonTile.tostring()=='n':
+                            value=value+320
+
+                        if gametiles[y][x].pieceonTile.tostring()=='b':
+                            value=value+330
+
+                        if gametiles[y][x].pieceonTile.tostring()=='r':
+                            value=value+485
+
+                        if gametiles[y][x].pieceonTile.tostring()=='q':
+                            value=value+940
+
+                        if gametiles[y][x].pieceonTile.tostring()=='k':
+                            value=value+10000
+                    if bQueenCount ==  0 and wQueenCount == 0:
+                        if gametiles[y][x].pieceonTile.tostring()=='P':
+                            value=value-100
+
+                        if gametiles[y][x].pieceonTile.tostring()=='N':
+                            value=value-320
+
+                        if gametiles[y][x].pieceonTile.tostring()=='B':
+                            value=value-330
+
+                        if gametiles[y][x].pieceonTile.tostring()=='R':
+                            value=value-515
+
+                        if gametiles[y][x].pieceonTile.tostring()=='Q':
+                            value=value-950
+
+                        if gametiles[y][x].pieceonTile.tostring()=='K':
+                            value=value-10000
+
+                        if gametiles[y][x].pieceonTile.tostring()=='p':
+                            value=value+100
+
+                        if gametiles[y][x].pieceonTile.tostring()=='n':
+                            value=value+320
+
+                        if gametiles[y][x].pieceonTile.tostring()=='b':
+                            value=value+330
+
+                        if gametiles[y][x].pieceonTile.tostring()=='r':
+                            value=value+515
+
+                        if gametiles[y][x].pieceonTile.tostring()=='q':
+                            value=value+950
+
+                        if gametiles[y][x].pieceonTile.tostring()=='k':
+                            value=value+10000
         return value
 
 
